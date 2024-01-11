@@ -1,0 +1,59 @@
+@model DBA5.Models.ActorEditViewModel
+
+@{
+    ViewBag.Title = "Edit Actor";
+}
+
+<h2>Edit Actor</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    @Html.HiddenFor(model => model.Id)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Name)
+        @Html.EditorFor(model => model.Name)
+        @Html.ValidationMessageFor(model => model.Name)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.AlternateName)
+        @Html.EditorFor(model => model.AlternateName)
+        @Html.ValidationMessageFor(model => model.AlternateName)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.BirthDate)
+        @Html.EditorFor(model => model.BirthDate)
+        @Html.ValidationMessageFor(model => model.BirthDate)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Height)
+        @Html.EditorFor(model => model.Height)
+        @Html.ValidationMessageFor(model => model.Height)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ImageUrl)
+        @Html.EditorFor(model => model.ImageUrl)
+        @Html.ValidationMessageFor(model => model.ImageUrl)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Executive)
+        @Html.EditorFor(model => model.Executive)
+        @Html.ValidationMessageFor(model => model.Executive)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Biography)
+        @Html.EditorFor(model => model.Biography)
+        @Html.ValidationMessageFor(model => model.Biography)
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+    @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-default" })
+}

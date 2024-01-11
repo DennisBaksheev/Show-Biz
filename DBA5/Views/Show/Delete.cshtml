@@ -1,0 +1,28 @@
+@model DBA5.Models.ShowBaseViewModel
+
+@{
+    ViewBag.Title = "Delete Show";
+}
+
+<h2>Delete Show</h2>
+
+<h3>Are you sure you want to delete this show?</h3>
+<p>
+    <strong>Name:</strong> @Model.Name<br />
+    <strong>Genre:</strong> @Model.Genre<br />
+    <strong>Release Date:</strong> @Model.ReleaseDate.ToShortDateString()<br />
+    <strong>Image URL:</strong> @Model.ImageUrl<br />
+    <strong>Coordinator:</strong> @Model.Coordinator<br />
+    <strong>Premise:</strong> @Model.Premise<br />
+    
+</p>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+}
